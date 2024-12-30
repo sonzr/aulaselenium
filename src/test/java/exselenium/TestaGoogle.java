@@ -1,11 +1,11 @@
 package exselenium;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -13,25 +13,25 @@ public class TestaGoogle {
 	
 	protected WebDriver driver;
 	
-	@BeforeClass
+	@BeforeAll
 	public static void configuraDriver() {
-		System.setProperty("webdriver.chrome.driver", "D:\\Libs\\chromedriver\\84\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Everson\\Documents\\GitHub\\exerc-cio-selenium-sonzr\\chromedriver.exe");
 	}
 	
-    @Before
+    @BeforeEach
     public void createDriver() {  
     
 		driver = new ChromeDriver();
         driver.get("https://www.google.com.br");
     }	
-
-	@Test
-	public void test() {
+    
+    @Test
+    public void test() {
 		fail("Not yet implemented");
 	}
 	
-    @After
+    @AfterEach
     public void quitDriver() {
-       driver.quit();
+    	driver.quit();
     }
 }
